@@ -414,6 +414,7 @@ hr {
   /* Reset image and banner title position */
   .banner .banner-content img {
     position: static;
+    width: 100%;
     filter: brightness(1);
   }
   .banner-content h1 {
