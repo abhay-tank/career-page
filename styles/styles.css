@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
+/* Creating main website structure */
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -42,31 +44,21 @@ nav {
 
 .gallery1 {
   grid-area: gallery1;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
 }
 .gallery2 {
   grid-area: gallery2;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
 }
 
 .gallery3 {
   grid-area: gallery3;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
 }
 
 .gallery4 {
   grid-area: gallery4;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
 }
 
 .gallery5 {
   grid-area: gallery5;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
 }
 
 .jobs {
@@ -77,11 +69,14 @@ nav {
   grid-area: footer;
 }
 
+/* Main website Structure End */
+
+/* Navbar CSS along with styling for Navbar logo + website title / company name */
+
 .navbar {
   margin: 0;
   padding: 0;
   position: sticky;
-  /* background-color: black; */
   top: 0;
   z-index: 99;
   box-shadow: 0 1px #383838;
@@ -139,7 +134,6 @@ nav {
   text-decoration: none;
   margin-left: 2rem;
   padding: 0;
-  color: var(--primary-text-color);
   transition: 100ms;
 }
 .logo {
@@ -156,19 +150,9 @@ nav {
   margin: 0;
 }
 
-.call-to-action {
-  padding: 1rem;
-  border: 0;
-  color: white;
-  background-color: #2e9ee4;
-  border-radius: 2rem;
-  text-transform: uppercase;
-  transition: 300ms;
-}
+/* Navbar End */
 
-.call-to-action:hover {
-  background-color: #3a2ee4;
-}
+/* Banner CSS */
 
 .banner {
   background: linear-gradient(180deg, #151416 50%, white 50%);
@@ -196,6 +180,10 @@ nav {
   z-index: 1;
 }
 
+/* Banner END */
+
+/* Join Section */
+
 .join {
   display: flex;
   flex-direction: column;
@@ -203,19 +191,6 @@ nav {
   justify-content: center;
   text-align: center;
   color: #2d2d2d;
-}
-
-hr {
-  width: 100%;
-  color: #000;
-}
-
-.orange-hr {
-  margin: 3rem auto;
-  width: 8%;
-  border: 0;
-  height: 2px;
-  background-color: tomato;
 }
 
 .join h1 {
@@ -228,10 +203,18 @@ hr {
   margin-bottom: 5rem;
 }
 
+/* Join Section END */
+
+/* Photo Gallery */
+
 .gallery img {
   width: 100%;
   height: 100%;
 }
+
+/* Photo Gallery END */
+
+/* Jobs Section */
 
 .jobs {
   display: flex;
@@ -315,6 +298,10 @@ hr {
   font-weight: bold;
 }
 
+/* Jobs Section END */
+
+/* Footer Section */
+
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -378,33 +365,74 @@ hr {
   border-bottom: 1px solid white;
 }
 
+/* Footer END */
+
+/* Common items */
+
+.call-to-action {
+  padding: 1rem;
+  border: 0;
+  color: white;
+  background-color: #2e9ee4;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  transition: 300ms;
+}
+
+.call-to-action:hover {
+  background-color: #3a2ee4;
+}
+
+hr {
+  width: 100%;
+  color: #000;
+}
+
+.orange-hr {
+  margin: 3rem auto;
+  width: 8%;
+  border: 0;
+  height: 2px;
+  background-color: tomato;
+}
+
+/* Common items END */
+
 @media (max-width: 900px) {
+  /* Show Hamburger Menu Icon */
   .navbar-links > li:last-child {
     display: block;
   }
+  /* Hide navbar links except logo and hamburger icon */
   .navbar-links > li:not(:first-child):not(:last-child) {
     display: none;
   }
+  /* Set banner background to 100% */
   .banner {
     background: linear-gradient(180deg, #151416 50%, #151416 50%);
   }
+  /* Reset image and banner title position */
   .banner .banner-content img {
     position: static;
+    filter: brightness(1);
   }
   .banner-content h1 {
     position: static;
   }
 
+  /* Expand gallery images on small screen size */
   .gallery {
     grid-column: 2 / 12;
     grid-row: auto;
   }
 
+  /* Align job items and posting date to start */
   .job-opening {
     flex-direction: column;
     align-items: flex-start;
   }
 
+  /* Set social links before terms and conditions */
   .social-container {
     flex-direction: column-reverse;
     justify-content: center;
