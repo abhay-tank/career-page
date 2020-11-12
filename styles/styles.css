@@ -2,6 +2,19 @@
 
 /* Creating main website structure */
 
+/* Using RGBA values over hex so we can control opacity */
+:root {
+  --primary-black: rgba(21, 20, 22, 1); /* #151416 */
+  --secondary-black: rgba(45, 45, 45, 1); /*  #2d2d2d */
+  --primary-white: rgba(255, 255, 255, 1); /* #ffffff */
+  --secondary-white: rgba(246, 248, 248, 1); /* #f6f8f8 */
+  --primary-blue: rgba(46, 158, 228, 1); /*  #2e9ee4 */
+  --secondary-blue: rgba(58, 46, 228, 1); /* #3a2ee4 */
+  --primary-divider: rgba(248, 63, 55, 1); /* #f83f37 */
+  --secondary-divider: rgba(0, 0, 0, 0.2); /* #000000 */
+  --nav-shadow: #383838; /* #383838 */
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -27,7 +40,7 @@ body {
 
 nav {
   grid-area: nav;
-  background-color: #151416;
+  background-color: var(--primary-black);
 }
 
 .banner {
@@ -79,7 +92,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 99;
-  box-shadow: 0 1px #383838;
+  box-shadow: 0 1px var(--nav-shadow);
 }
 
 .navbar-links {
@@ -108,22 +121,21 @@ nav {
 
 .navbar-link-item > a {
   text-decoration: none;
-  color: white;
+  color: var(--primary-white);
   text-transform: uppercase;
   text-align: center;
   font-size: 0.8rem;
-  border-bottom: 1px solid #151416;
-  transform: scaleX(0);
+  border-bottom: 1px solid var(--primary-black);
   transition: 300ms ease-in-out;
 }
 
 .navbar-link-item > a:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--primary-white);
   transform: scaleX(1);
 }
 
 .nav-icon {
-  color: white;
+  color: var(--primary-white);
   font-size: 1.5rem;
   display: none;
 }
@@ -155,7 +167,11 @@ nav {
 /* Banner CSS */
 
 .banner {
-  background: linear-gradient(180deg, #151416 50%, white 50%);
+  background: linear-gradient(
+    180deg,
+    var(--primary-black) 50%,
+    var(--primary-white) 50%
+  );
 }
 
 .banner-content {
@@ -176,7 +192,7 @@ nav {
 
 .banner-content h1 {
   position: absolute;
-  color: white;
+  color: var(--primary-white);
   z-index: 1;
 }
 
@@ -190,7 +206,7 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #2d2d2d;
+  color: var(--secondary-black);
 }
 
 .join h1 {
@@ -222,12 +238,12 @@ nav {
   justify-content: center;
   align-items: flex-start;
   margin-top: 5rem;
-  background-color: #f6f8f8;
-  border-top: 1px solid gray;
+  background-color: var(--secondary-white);
+  border-top: 1px solid var(--secondary-divider);
 }
 
 .jobs h1 {
-  color: #2d2d2d;
+  color: var(--secondary-black);
   text-align: center;
   margin: auto;
 }
@@ -239,7 +255,7 @@ nav {
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  color: #2d2d2d;
+  color: var(--secondary-black);
 }
 
 .jobs-content * {
@@ -270,7 +286,7 @@ nav {
   align-items: center;
   margin: 1.5rem 5vw;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--secondary-divider);
 }
 
 .job-opening * {
@@ -287,7 +303,7 @@ nav {
   font-size: 1.3rem;
   font-weight: 500;
   text-decoration: none;
-  color: #2e9ee4;
+  color: var(--primary-blue);
   padding: 0;
 }
 .job-posted-at {
@@ -308,8 +324,8 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #151416;
-  color: white;
+  background-color: var(--primary-black);
+  color: var(--primary-white);
 }
 
 .footer-banner {
@@ -345,7 +361,7 @@ nav {
 
 .social-link > a {
   text-decoration: none;
-  color: white;
+  color: var(--primary-white);
 }
 
 .terms-container {
@@ -356,13 +372,13 @@ nav {
   font-size: 1.2rem;
   margin-right: 1rem;
   text-decoration: none;
-  color: white;
-  border-bottom: 1px solid #151416;
+  color: var(--primary-white);
+  border-bottom: 1px solid var(--primary-black);
   transition: 300ms;
 }
 
 .footer-link-item:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--primary-white);
 }
 
 /* Footer END */
@@ -372,20 +388,20 @@ nav {
 .call-to-action {
   padding: 1rem;
   border: 0;
-  color: white;
-  background-color: #2e9ee4;
+  color: var(--primary-white);
+  background-color: var(--primary-blue);
   border-radius: 2rem;
   text-transform: uppercase;
   transition: 300ms;
 }
 
 .call-to-action:hover {
-  background-color: #3a2ee4;
+  background-color: var(--secondary-blue);
 }
 
 hr {
   width: 100%;
-  color: #000;
+  color: var(--primary-black);
 }
 
 .orange-hr {
@@ -393,7 +409,7 @@ hr {
   width: 8%;
   border: 0;
   height: 2px;
-  background-color: tomato;
+  background-color: var(--primary-divider);
 }
 
 /* Common items END */
@@ -409,7 +425,11 @@ hr {
   }
   /* Set banner background to 100% */
   .banner {
-    background: linear-gradient(180deg, #151416 50%, #151416 50%);
+    background: linear-gradient(
+      180deg,
+      var(--primary-black) 50%,
+      var(--primary-black) 50%
+    );
   }
   /* Reset image and banner title position */
   .banner .banner-content img {
