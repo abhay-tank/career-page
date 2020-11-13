@@ -192,6 +192,7 @@ nav {
 
 .banner-content h1 {
   position: absolute;
+  text-align: center;
   color: var(--primary-white);
   z-index: 1;
 }
